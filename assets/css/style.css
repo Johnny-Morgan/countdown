@@ -1,5 +1,29 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
 h1 {
   color: #2d8ccc;
   font-size: 4rem;
   text-transform: uppercase;
+}
+
+.numbers {
+  margin-top: 5rem;
+}
+
+.row {
+  justify-content: center;
+}
+
+.cell {
+  border: 1px solid black;
+  padding: 50px;
+  font-size: 3rem;
+  min-width: 150px;
+  max-width: 150px;
+  min-height: 150px;
+  max-height: 150px;
+  text-align: center;
 }
