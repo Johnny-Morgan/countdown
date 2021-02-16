@@ -18,12 +18,26 @@ h1 {
 }
 
 .cell {
+  position: relative;
+  background-color: #2d8ccc;
+  color: #f0f0f0;
   border: 1px solid black;
   padding: 50px;
-  font-size: 3rem;
+  margin-right: 0.5rem;
+  font-size: 3.5rem;
+  font-weight: 700;
   min-width: 150px;
   max-width: 150px;
   min-height: 150px;
   max-height: 150px;
+  text-align: center;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.cell span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
 }
