@@ -64,6 +64,11 @@ function generateNumbers() {
 
   console.log(`${smallNumPick} small numbers and ${bigNumPick} big numbers`);
   console.log(numbersPicked);
+
+  let numbers = document.querySelectorAll(".cell span");
+  numbers.forEach((num) => {
+    num.innerHTML = numbersPicked.shift();
+  });
 }
 
 // Test generateNumbers()
