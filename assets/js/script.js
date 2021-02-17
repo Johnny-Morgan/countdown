@@ -62,9 +62,6 @@ function generateNumbers() {
     numbersPicked.push(smallNums.pop());
   }
 
-  console.log(`${smallNumPick} small numbers and ${bigNumPick} big numbers`);
-  console.log(numbersPicked);
-
   let numbers = document.querySelectorAll(".cell span");
   numbers.forEach((num) => {
     num.innerHTML = numbersPicked.shift();
@@ -74,6 +71,14 @@ function generateNumbers() {
 // Test generateNumbers()
 generateNumbers();
 
-// Generate number between 100 and 999
-targetNumber = Math.floor(Math.random() * 900) + 100;
-document.querySelector(".target-num").innerHTML = targetNumber;
+/* 
+    Function that generates the target number 
+    The target number must be between 100 and 999
+*/
+function generateTarget() {
+  targetNumber = Math.floor(Math.random() * 900) + 100;
+  document.querySelector(".target-num").innerHTML = targetNumber;
+}
+
+// Test generateTarget()
+generateTarget();
