@@ -73,3 +73,7 @@ function generateNumbers() {
 
 // Test generateNumbers()
 generateNumbers();
+
+// Generate number between 100 and 999
+targetNumber = Math.floor(Math.random() * 900) + 100;
+document.querySelector(".target-num").innerHTML = targetNumber;
