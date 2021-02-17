@@ -5,8 +5,18 @@ body {
 
 h1 {
   color: #2d8ccc;
-  font-size: 4rem;
+  font-size: 4.5rem;
   text-transform: uppercase;
+}
+
+.target-num {
+  background-color: #2d8ccc;
+  font-size: 4.5rem;
+  font-weight: 700;
+  color: #f0f0f0;
+  padding: 0.1em 0.5em;
+  border: 1px solid black;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .numbers {
@@ -22,14 +32,14 @@ h1 {
   background-color: #2d8ccc;
   color: #f0f0f0;
   border: 1px solid black;
-  padding: 50px;
+  padding: 1em;
   margin-right: 0.5rem;
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-weight: 700;
-  min-width: 150px;
-  max-width: 150px;
-  min-height: 150px;
-  max-height: 150px;
+  min-width: 100px;
+  max-width: 100px;
+  min-height: 100px;
+  max-height: 100px;
   text-align: center;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
