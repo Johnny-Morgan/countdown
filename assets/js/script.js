@@ -72,8 +72,8 @@ function generateNumbers() {
 generateNumbers();
 
 /* 
-    Function that generates the target number 
-    The target number must be between 100 and 999
+  Function that generates the target number 
+  The target number must be between 100 and 999
 */
 function generateTarget() {
   targetNumber = Math.floor(Math.random() * 900) + 100;
@@ -82,3 +82,29 @@ function generateTarget() {
 
 // Test generateTarget()
 generateTarget();
+
+const range = document.getElementById("range");
+
+range.addEventListener("input", (e) => {
+  const value = +e.target.value;
+  const label = e.target.nextElementSibling;
+  let message = "";
+  switch (value) {
+    case 0:
+      message = "No large & 6 small";
+      break;
+    case 1:
+      message = "1 large & 5 small";
+      break;
+    case 2:
+      message = "2 large & 4 small";
+      break;
+    case 3:
+      message = "3 large & 3 small";
+      break;
+    case 4:
+      message = "4 large & 2 small";
+      break;
+  }
+  label.innerHTML = message;
+});
