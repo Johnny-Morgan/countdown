@@ -19,7 +19,7 @@ function shuffle(array) {
 }
 
 // Function that generates the numbers to play the game
-function generateNumbers() {
+function generateNumbers(noOfBigNums) {
   const bigNums = [100, 75, 50, 25];
   const smallNums = [
     1,
@@ -47,18 +47,17 @@ function generateNumbers() {
   shuffle(smallNums);
   let numbersPicked = [];
 
-  // User can pick between 0 and 4 big numbers
-  let bigNumPick = Math.floor(Math.random() * 5);
-  /* The total amount of numbers a user can pick is 6.
+  /* User can pick between 0 and 4 big numbers
+    The total amount of numbers a user can pick is 6.
     Therefore the number of small numbers is calcualted 
     by subtracting the the amount of big numbers from 6
     */
-  let smallNumPick = 6 - bigNumPick;
+  let noOfsmallNums = 6 - noOfBigNums;
 
-  for (let i = 0; i < bigNumPick; i++) {
+  for (let i = 0; i < noOfBigNums; i++) {
     numbersPicked.push(bigNums.pop());
   }
-  for (let i = 0; i < smallNumPick; i++) {
+  for (let i = 0; i < noOfsmallNums; i++) {
     numbersPicked.push(smallNums.pop());
   }
 
@@ -67,9 +66,6 @@ function generateNumbers() {
     num.innerHTML = numbersPicked.shift();
   });
 }
-
-// Test generateNumbers()
-generateNumbers();
 
 /* 
   Function that generates the target number 
@@ -80,18 +76,16 @@ function generateTarget() {
   document.querySelector(".target-num").innerHTML = targetNumber;
 }
 
-// Test generateTarget()
-generateTarget();
-
 const range = document.getElementById("range");
-
+// At the start of the game, the range is set to 2
+let value = 2;
 range.addEventListener("input", (e) => {
-  const value = +e.target.value;
+  value = +e.target.value;
   const label = e.target.nextElementSibling;
   let message = "";
   switch (value) {
     case 0:
-      message = "No large & 6 small";
+      message = "6 small";
       break;
     case 1:
       message = "1 large & 5 small";
@@ -107,4 +101,9 @@ range.addEventListener("input", (e) => {
       break;
   }
   label.innerHTML = message;
+});
+
+document.getElementById("play").addEventListener("click", () => {
+  generateNumbers(value);
+  generateTarget();
 });
